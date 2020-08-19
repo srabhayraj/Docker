@@ -40,3 +40,12 @@ Consider the following example scenario:
 ◽ When developers find bugs, they can fix them in the development environment and redeploy them to the test environment for testing and validation.<br />
 ◽ When testing is complete, getting the fix to the customer is as simple as pushing the updated image to the production environment.<br />
 
+### Responsive Deployment and Scaling
+
+Docker’s container-based platform allows for highly portable workloads. Docker containers can run on a developer’s local laptop, on physical or virtual machines in a data center, on cloud providers, or in a mixture of environments.<br />
+Docker’s portability and lightweight nature also make it easy to dynamically manage workloads, scaling up or tearing down applications and services as business needs dictate, in near real time.<br />
+Running more workloads on the same hardware.<br />
+Docker is lightweight and fast. It provides a viable, cost-effective alternative to hypervisor-based virtual machines, so you can use more of your compute capacity to achieve your business goals. Docker is perfect for high density environments and for small and medium deployments where you need to do more with fewer resources.<br />
+
+
+
