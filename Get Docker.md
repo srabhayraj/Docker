@@ -27,9 +27,9 @@ $ sudo yum remove docker \
                   docker-engine
 ```
 
-### Install Docker EE
+## Install Docker EE
 
-## Install using the repository
+### Install using the repository
 
 *SET UP THE REPOSITORY*
 
@@ -77,4 +77,41 @@ Use the following command to add the stable repository:
 $ sudo -E yum-config-manager \
     --add-repo \
     "$DOCKERURL/rhel/docker-ee.repo"
+```
+
+### Install Docker EE
+
+1. Install the latest version of Docker EE, or go to the next step to install a specific version.
+```
+$ sudo yum -y install docker-ee
+```
+
+2. The sort -r command to sort the results by version number, highest to lowest, and is truncated.<br />
+This yum list command only shows binary packages. To show source packages as well, omit the .x86_64 from the package name.
+```
+$ sudo yum list docker-ee.x86_64  --showduplicates | sort -r
+
+docker-ee.x86_64         17.06.ee.2-1.el7.rhel          docker-ee-stable-17.06
+```
+
+```
+$ sudo yum -y install <FULLY-QUALIFIED-PACKAGE-NAME>
+```
+Docker is installed but not started. The docker group is created, but no users are added to the group.
+
+3. Edit /etc/docker/daemon.json. If it does not yet exist, create it. Assuming that the file was empty, add the following contents.
+```
+{
+  "storage-driver": "devicemapper"
+}
+```
+
+4. Start Docker.
+```
+$ sudo systemctl start docker
+```
+
+5. Verify that Docker EE is installed correctly by running the hello-world image.
+```
+$ sudo docker run hello-world
 ```
