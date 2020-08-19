@@ -24,3 +24,19 @@ Docker Engine is a client-server application with these major components:
 
 ![alt Text](https://github.com/srabhayraj/Docker/blob/master/metadata/docker-engine.png)
 
+The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. Many other Docker applications use the underlying API and CLI.
+The daemon creates and manages Docker objects, such as images, containers, networks, and volumes.
+
+## Docker can be used for
+
+Fast, consistent delivery of your applications
+
+Docker streamlines the development lifecycle by allowing developers to work in standardized environments using local containers which provide your applications and services. Containers are great for continuous integration and continuous delivery (CI/CD) workflows.
+
+Consider the following example scenario:
+
+◽ Your developers write code locally and share their work with their colleagues using Docker containers.
+◽ They use Docker to push their applications into a test environment and execute automated and manual tests.
+◽ When developers find bugs, they can fix them in the development environment and redeploy them to the test environment for testing and validation.
+◽ When testing is complete, getting the fix to the customer is as simple as pushing the updated image to the production environment.
+
