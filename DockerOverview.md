@@ -35,8 +35,8 @@ Docker streamlines the development lifecycle by allowing developers to work in s
 
 Consider the following example scenario:
 
-◽ Your developers write code locally and share their work with their colleagues using Docker containers.
-◽ They use Docker to push their applications into a test environment and execute automated and manual tests.
-◽ When developers find bugs, they can fix them in the development environment and redeploy them to the test environment for testing and validation.
-◽ When testing is complete, getting the fix to the customer is as simple as pushing the updated image to the production environment.
+◽ Your developers write code locally and share their work with their colleagues using Docker containers.<br />
+◽ They use Docker to push their applications into a test environment and execute automated and manual tests.<br />
+◽ When developers find bugs, they can fix them in the development environment and redeploy them to the test environment for testing and validation.<br />
+◽ When testing is complete, getting the fix to the customer is as simple as pushing the updated image to the production environment.<br />
 
