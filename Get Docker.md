@@ -115,3 +115,39 @@ $ sudo systemctl start docker
 ```
 $ sudo docker run hello-world
 ```
+
+## Get Docker CE for CentOS
+
+### Install from a package
+
+1. Go to https://download.docker.com/linux/centos/7/x86_64/stable/Packages/ and download the .rpm file for the Docker version you want to install.
+
+2. Install Docker CE, changing the path below to the path where you downloaded the Docker package.
+```
+$ sudo yum install /path/to/package.rpm
+```
+Docker is installed but not started. The docker group is created, but no users are added to the group.
+
+3. Start Docker.
+```
+$ sudo systemctl start docker
+```
+
+4. Verify that docker is installed correctly by running the hello-world image.
+```
+$ sudo docker run hello-world
+```
+This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits.
+
+### Uninstall Docker CE
+
+Uninstall the Docker package:
+```
+$ sudo yum remove docker-ce
+```
+
+Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:
+```
+$ sudo rm -rf /var/lib/docker
+```
+You must delete any edited configuration files manually.
