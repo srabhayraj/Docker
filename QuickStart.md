@@ -123,4 +123,52 @@ You may receive a message titled ‘SECURITY WARNING’ after running the image,
 ```
 docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0
 ```
+There are a couple of common flags here:
 
+◽ --publish asks Docker to forward traffic incoming on the host’s port 8000 to the container’s port 8080. Containers have their own private set of ports, so if you want to reach one from the network, you have to forward traffic to it in this way. Otherwise, firewall rules will prevent all network traffic from reaching your container, as a default security posture.<br />
+◽ --detach asks Docker to run this container in the background.<br />
+◽ --name specifies a name with which you can refer to your container in subsequent commands, in this case bb.<br />
+
+2. Visit your application in a browser at localhost:8000. You should see your bulletin board application up and running. At this step, you would normally do everything you could to ensure your container works the way you expected; now would be the time to run unit tests, for example.
+
+3. Once you’re satisfied that your bulletin board container works correctly, you can delete it:
+```
+docker rm --force bb
+```
+The --force option stops a running container, so it can be removed. If you stop the container running with docker stop bb first, then you do not need to use --force to remove it.
+
+{In the first command if we write as it is then error occurs since the output generated in docs after the build command is "Successfully tagged bulletinboard:1.0" and the output generated in terminal is "Successfully tagged bulletin:1.0". So to run the first command we have to write "docker run --publish 8000:8080 --detach --name bb bulletin:1.0" instead of "docker run --publish 8000:8080 --detach --name bb bulletinboard:1.0". Now the command will run and we will get our image}
+
+## Sample Dockerfile
+
+Writing a Dockerfile is the first step to containerizing an application. You can think of these Dockerfile commands as a step-by-step recipe on how to build up your image. The Dockerfile in the bulletin board app looks like this:
+```
+# Use the official image as a parent image.
+FROM node:current-slim
+
+# Set the working directory.
+WORKDIR /usr/src/app
+
+# Copy the file from your host to your current location.
+COPY package.json .
+
+# Run the command inside your image filesystem.
+RUN npm install
+
+# Add metadata to the image to describe which port the container is listening on at runtime.
+EXPOSE 8080
+
+# Run the specified command within the container.
+CMD [ "npm", "start" ]
+
+# Copy the rest of your app's source code from your host to your image filesystem.
+COPY . .
+```
+
+The dockerfile defined in this example takes the following steps:
+
+◽ Start FROM the pre-existing node:current-slim image. This is an official image, built by the node.js vendors and validated by Docker to be a high-quality image containing the Node.js Long Term Support (LTS) interpreter and basic dependencies.<br />
+◽ Use WORKDIR to specify that all subsequent actions should be taken from the directory /usr/src/app in your image filesystem (never the host’s filesystem).<br />
+◽ COPY the file package.json from your host to the present location (.) in your image (so in this case, to /usr/src/app/package.json)<br />
+◽ RUN the command npm install inside your image filesystem (which will read package.json to determine your app’s node dependencies, and install them)<br />
+◽ COPY in the rest of your app’s source code from your host to your image filesystem.<br />
