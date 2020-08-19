@@ -85,3 +85,39 @@ By default, a container is relatively well isolated from other containers and it
 
 A container is defined by its image as well as any configuration options you provide to it when you create or start it. When a container is removed, any changes to its state that are not stored in persistent storage disappear.
 
+Example docker run command
+The following command runs an ubuntu container, attaches interactively to your local command-line session, and runs /bin/bash.
+```
+$ docker run -i -t ubuntu /bin/bash
+```
+When you run this command, the following happens (assuming you are using the default registry configuration):
+
+If you do not have the ubuntu image locally, Docker pulls it from your configured registry, as though you had run docker pull ubuntu manually.
+
+Docker creates a new container, as though you had run a docker container create command manually.
+
+Docker allocates a read-write filesystem to the container, as its final layer. This allows a running container to create or modify files and directories in its local filesystem.
+
+Docker creates a network interface to connect the container to the default network, since you did not specify any networking options. This includes assigning an IP address to the container. By default, containers can connect to external networks using the host machine’s network connection.
+
+Docker starts the container and executes /bin/bash. Because the container is running interactively and attached to your terminal (due to the -i and -t flags), you can provide input using your keyboard while the output is logged to your terminal.
+
+When you type exit to terminate the /bin/bash command, the container stops but is not removed. You can start it again or remove it.
+
+### Services
+
+Services allow you to scale containers across multiple Docker daemons, which all work together as a swarm with multiple managers and workers. Each member of a swarm is a Docker daemon, and all the daemons communicate using the Docker API. A service allows you to define the desired state, such as the number of replicas of the service that must be available at any given time.
+
+### Namespaces
+
+Docker Engine uses namespaces such as the following on Linux:
+
+The pid namespace: Process isolation (PID: Process ID).<br />
+The net namespace: Managing network interfaces (NET: Networking).<br />
+The ipc namespace: Managing access to IPC resources (IPC: InterProcess Communication).<br />
+The mnt namespace: Managing filesystem mount points (MNT: Mount).<br />
+The uts namespace: Isolating kernel and version identifiers. (UTS: Unix Timesharing System).<br />
+
+### Control groups
+
+Docker Engine on Linux also relies on another technology called control groups (cgroups). A cgroup limits an application to a specific set of resources. Control groups allow Docker Engine to share available hardware resources to containers and optionally enforce limits and constraints. For example, you can limit the memory available to a specific container.
