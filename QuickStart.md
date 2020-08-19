@@ -172,3 +172,46 @@ The dockerfile defined in this example takes the following steps:
 ◽ COPY the file package.json from your host to the present location (.) in your image (so in this case, to /usr/src/app/package.json)<br />
 ◽ RUN the command npm install inside your image filesystem (which will read package.json to determine your app’s node dependencies, and install them)<br />
 ◽ COPY in the rest of your app’s source code from your host to your image filesystem.<br />
+
+
+# Part 3: Share images on Docker Hub
+
+## Introduction
+
+At this point, you’ve built a containerized application described in Part 2 on your local development machine.
+
+The final step in developing a containerized application is to share your images on a registry like Docker Hub, so they can be easily downloaded and run on any destination machine.
+
+## Set up your Docker Hub account
+
+If you don’t have a Docker ID, follow these steps to create one. A Docker ID allows you to share images on Docker Hub.
+
+1. Visit the Docker Hub sign up page.
+2. Fill out the form and submit to create your Docker ID.
+3. Verify your email address to complete the registration process.
+4. Click on the Docker icon in your toolbar or system tray, and click Sign in / Create Docker ID.
+5. Fill in your new Docker ID and password. After you have successfully authenticated, your Docker ID appears in the Docker Desktop menu in place of the ‘Sign in’ option you just used.
+
+You can also sign into Docker Hub from the command line by typing docker login.
+
+## Create a Docker Hub repository and push your image
+
+```
+Note: Before creating a repository, ensure you’ve set up your Docker Hub account and have connected it to your Docker Desktop.
+```
+
+Now let’s create your first repository, and push your bulletin board image to Docker Hub.
+1. Click on the Docker icon in your menu bar, and navigate to Repositories > Create. You’ll be redirected to the Create Repository page on Docker Hub.
+2. Type the repository name as bulletinboard and click Create at the bottom of the page. Do not fill any other details for now.
+3. You are now ready to share your image on Docker Hub, however, there’s one thing you must do first: images must be namespaced correctly to share on Docker Hub. Specifically, you must name images like <Your Docker ID>/<Repository Name>:<tag>.
+
+Make sure you’re in the node-bulletin-board/bulletin-board-app directory in a terminal or PowerShell then and run:
+```
+docker tag bulletinboard:1.0 <Your Docker ID>/bulletinboard:1.0
+```
+{In this we have to give command  "$ docker tag bulletin:1.0 abhayrajsr/bulletinboard:1.0", since our tag is bulletin:1.0}
+4. Finally, push your image to Docker Hub:
+```
+docker push <Your Docker ID>/bulletinboard:1.0
+```
+Visit your repository in Docker Hub, and you’ll see your new image there. Remember, Docker Hub repositories are public by default.
