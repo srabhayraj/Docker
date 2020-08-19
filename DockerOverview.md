@@ -22,5 +22,5 @@ Docker Engine is a client-server application with these major components:
 
 ◽ A command line interface (CLI) client (the docker command).
 
-![alt Text](https://github.com/)
+![alt Text](https://github.com/srabhayraj/Docker/blob/master/metadata/docker-engine.png)
 
