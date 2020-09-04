@@ -168,59 +168,60 @@ $ sudo systemctl disable docker
 ## Docker Commands
 
 
-### Command	-> Description<br />
-docker attach	-> Attach local standard input, output, and error streams to a running container<br />
-docker build	-> Build an image from a Dockerfile<br />
-docker checkpoint	-> Manage checkpoints<br />
-docker commit	-> Create a new image from a container’s changes<br />
-docker config	-> Manage Docker configs<br />
-docker container	-> Manage containers<br />
-docker cp	-> Copy files/folders between a container and the local filesystem<br />
-docker create	-> Create a new container<br />
-docker deploy	-> Deploy a new stack or update an existing stack<br />
-docker diff	-> Inspect changes to files or directories on a container’s filesystem<br />
-docker events	-> Get real time events from the server<br />
-docker exec	-> Run a command in a running container<br />
-docker export	-> Export a container’s filesystem as a tar archive<br />
-docker history	-> Show the history of an image<br />
-docker image	-> Manage images<br />
-docker images	-> List images<br />
-docker import	-> Import the contents from a tarball to create a filesystem image<br />
-docker info	-> Display system-wide information<br />
-docker inspect	-> Return low-level information on Docker objects<br />
-docker kill	-> Kill one or more running containers<br />
-docker load	-> Load an image from a tar archive or STDIN<br />
-docker login	-> Log in to a Docker registry<br />
-docker logout	-> Log out from a Docker registry<br />
-docker logs	-> Fetch the logs of a container<br />
-docker network	-> Manage networks<br />
-docker node	-> Manage Swarm nodes<br />
-docker pause	-> Pause all processes within one or more containers<br />
-docker plugin	-> Manage plugins<br />
-docker port	-> List port mappings or a specific mapping for the container<br />
-docker ps	-> List containers<br />
-docker pull	-> Pull an image or a repository from a registry<br />
-docker push	-> Push an image or a repository to a registry<br />
-docker rename	-> Rename a container<br />
-docker restart	-> Restart one or more containers<br />
-docker rm	-> Remove one or more containers<br />
-docker rmi	-> Remove one or more images<br />
-docker run	-> Run a command in a new container<br />
-docker save	-> Save one or more images to a tar archive (streamed to STDOUT by default)<br />
-docker search	-> Search the Docker Hub for images<br />
-docker secret	-> Manage Docker secrets<br />
-docker service	-> Manage services<br />
-docker stack	-> Manage Docker stacks<br />
-docker start	-> Start one or more stopped containers<br />
-docker stats	-> Display a live stream of container(s) resource usage statistics<br />
-docker stop	-> Stop one or more running containers<br />
-docker swarm	-> Manage Swarm<br />
-docker system	-> Manage Docker<br />
-docker tag	-> Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE<br />
-docker top	-> Display the running processes of a container<br />
-docker unpause	-> Unpause all processes within one or more containers<br />
-docker update	-> Update configuration of one or more containers<br />
-docker version	-> Show the Docker version information<br />
-docker volume	-> Manage volumes<br />
-docker wait	-> Block until one or more containers stop, then print their exit codes<br />
-
+| Command	| Description |
+| :- | :- |
+| docker attach	| Attach local standard input, output, and error streams to a running container |
+| docker build	| Build an image from a Dockerfile |
+| docker checkpoint	| Manage checkpoints |
+| docker commit	| Create a new image from a container’s changes |
+| docker config	| Manage Docker configs |
+| docker container	| Manage containers |
+| docker cp	| Copy files/folders between a container and the local filesystem |
+| docker create	| Create a new container |
+| docker deploy	| Deploy a new stack or update an existing stack |
+| docker diff	| Inspect changes to files or directories on a container’s filesystem |
+| docker events	| Get real time events from the server |
+| docker exec	| Run a command in a running container |
+| docker export	| Export a container’s filesystem as a tar archive |
+| docker history	| Show the history of an image |
+| docker image	| Manage images |
+| docker images	| List images |
+| docker import	| Import the contents from a tarball to create a filesystem image |
+| docker info	| Display system-wide information |
+| docker inspect	| Return low-level information on Docker objects |
+| docker kill	| Kill one or more running containers |
+| docker load	| Load an image from a tar archive or STDIN |
+| docker login	| Log in to a Docker registry |
+| docker logout	| Log out from a Docker registry |
+| docker logs	| Fetch the logs of a container |
+| docker network	| Manage networks |
+| docker node	| Manage Swarm nodes |
+| docker pause	| Pause all processes within one or more containers |
+| docker plugin	| Manage plugins |
+| docker port	| List port mappings or a specific mapping for the container |
+| docker ps	| List containers |
+| docker pull	| Pull an image or a repository from a registry |
+| docker push	| Push an image or a repository to a registry |
+| docker rename	| Rename a container |
+| docker restart	| Restart one or more containers |
+| docker rm	| Remove one or more containers |
+| docker rmi	| Remove one or more images |
+| docker run	| Run a command in a new container |
+| docker save	| Save one or more images to a tar archive (streamed to STDOUT by default) |
+| docker search	| Search the Docker Hub for images |
+| docker secret	| Manage Docker secrets |
+| docker service	| Manage services |
+| docker stack	| Manage Docker stacks |
+| docker start	| Start one or more stopped containers |
+| docker stats	| Display a live stream of container(s) resource usage statistics |
+| docker stop	| Stop one or more running containers |
+| docker swarm	| Manage Swarm |
+| docker system	| Manage Docker |
+| docker tag	| Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE |
+| docker top	| Display the running processes of a container |
+| docker unpause	| Unpause all processes within one or more containers |
+| docker update	| Update configuration of one or more containers |
+| docker version	| Show the Docker version information |
+| docker volume	| Manage volumes |
+| docker wait	| Block until one or more containers stop, then print their exit codes |
+ 
